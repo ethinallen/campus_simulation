@@ -55,7 +55,6 @@ class campus:
 
     # age every building 1 unit of time
     def getOlder(self, row, index):
-        print(row)
         for building in self.buildings:
             building_object = self.buildings[building]
 

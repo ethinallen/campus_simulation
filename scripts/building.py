@@ -57,7 +57,6 @@ class building:
 
     def generate_power_consumption(self, rowData, index):
         powerConsumption = rowData + self.adjustment + abs(self.entropy[index])
-        print('POWER CONSUMPTION:\t\t{}'.format(powerConsumption))
         return powerConsumption
 
 if __name__ == '__main__':
