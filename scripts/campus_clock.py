@@ -32,11 +32,11 @@ class clock:
                 inputPower = self.generateInput()
                 newRow = {'datetime' : [dtime], 'AEP_MW' : [inputPower]}
                 inputData = pd.DataFrame(newRow)
-                print(inputData)
                 self.age(inputData)
 
         else:
             inputData = self.loadData().iloc[:5000]
+            inputData['datetime'] = inputData['Datetime']
             numRows = len(inputData.index)
 
             self.campus = campus(numRows)
