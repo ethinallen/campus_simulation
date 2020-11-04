@@ -163,8 +163,8 @@ class clock:
         temperatureDF['roomcorrobjectid'] = temperatureDF['roomcorrobjectid'].astype(np.int64)
         temperatureDF['sensorid'] = temperatureDF['sensorid'].astype(np.int64)
 
-        powerPipe = mrsm.Pipe('sim', 'power', mrsm_instance='sql:mrsm_server')
-        temperaturePipe = mrsm.Pipe('sim', 'temperature', mrsm_instance='sql:mrsm_server')
+        powerPipe = mrsm.Pipe('sim', 'power')
+        temperaturePipe = mrsm.Pipe('sim', 'temperature')
 
         powerPipe.sync(powerDF, debug=True)
         temperaturePipe.sync(temperatureDF, debug=True)
