@@ -173,7 +173,7 @@ class clock:
     def generateInput(self):
         pipe = mrsm.Pipe('sql:inscribe', 'temperature', mrsm_instance="api:mrsm_server")
         recentDF = pipe.get_backtrack_data(0)
-        current_temp = recentDF.iloc[0]['temperature']
+        current_temp = recentDF.iloc[0]['celcius']
         temp_difference = abs(21.111 - current_temp)
         averagePower = 15000
         power_increase = 5000 * temp_difference / 20
