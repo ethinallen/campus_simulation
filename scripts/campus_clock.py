@@ -171,7 +171,7 @@ class clock:
 
     # seed current temperature and generate input for age method
     def generateInput(self):
-        pipe = mrsm.Pipe('sql:inscribe', 'temperature', mrsm_instance="api:mrsm_server")
+        pipe = mrsm.Pipe('sql:inscribe', 'temperature')
         recentDF = pipe.get_backtrack_data(0)
         current_temp = recentDF.iloc[0]['celcius']
         temp_difference = abs(21.111 - current_temp)
